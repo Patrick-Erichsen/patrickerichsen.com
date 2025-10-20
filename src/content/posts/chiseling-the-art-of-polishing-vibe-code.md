@@ -6,11 +6,13 @@ description: "Vibe coding gives you velocity, but chiseling gives you quality. I
 
 I recently read Mitchell Hashimoto's post on [Vibing a Non-Trivial Ghostty Feature](https://mitchellh.com/writing/non-trivial-vibing), where he describes his "anti-slop sessions":
 
-> Throughout these [prompting sessions], I am usually dropping in and making minor manual changes as well.
->
-> The cleanup step is really important. To cleanup effectively you have to have a pretty good understanding of the code, so this forces me to not blindly accept AI-written code. Subsequently, better organized and documented code helps future agentic sessions perform better.
->
-> I sometimes tongue-in-cheek refer to this as the "anti-slop session".
+:::note
+Throughout these [prompting sessions], I am usually dropping in and making minor manual changes as well.
+
+The cleanup step is really important. To cleanup effectively you have to have a pretty good understanding of the code, so this forces me to not blindly accept AI-written code. Subsequently, better organized and documented code helps future agentic sessions perform better.
+
+I sometimes tongue-in-cheek refer to this as the "anti-slop session".
+:::
 
 In the debate around vibe coding, the cleanup step seems to be left out of the conversation. Everyone can agree on the principle of "make it work, make it right, make it fast", and for experienced developers like Mitchell it has become clear that LLMs can rapidly accelerate the "make it work" phase.
 
