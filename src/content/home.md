@@ -2,7 +2,6 @@
 avatarImage:
   src: './avatar.jpg'
   alt: 'Patrick Erichsen profile picture'
-githubCalendar: 'Patrick-Erichsen'
 ---
 
-Hello world!
+I'm Patrick, a founding engineer at continue.dev
