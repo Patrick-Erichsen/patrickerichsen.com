@@ -17,7 +17,7 @@ I recently read Mitchell Hashimoto's post on [Vibing a Non-Trivial Ghostty Featu
 
 In the debate around vibe coding, the cleanup step seems to be left out of the conversation. Everyone can agree on the principle of "make it work, make it right, make it fast", and for experienced developers like Mitchell it has become clear that LLMs can rapidly accelerate the "make it work" phase.
 
-But for some reason everyone believes that vibe coding ends there. Instead, at Continue we like to think of the vibe coding process as more akin to sculpture work.
+But for some reason everyone believes that vibe coding ends there. Instead, at [Continue](https://www.continue.dev/) we like to think of the vibe coding process as more akin to sculpture work.
 
 ### The Jackhammer
 
