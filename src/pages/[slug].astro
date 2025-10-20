@@ -1,7 +1,7 @@
 ---
 import type { GetStaticPaths } from 'astro'
 import Layout from '@layouts/Layout.astro'
-import { getSortedPosts } from '@utils'
+import { getSortedPosts, dateString } from '@utils'
 import PostPreview from '@components/PostPreview.astro'
 import DividerText from '@components/DividerText.astro'
 import { getCollection, render } from 'astro:content'
@@ -9,7 +9,7 @@ import PostAddendum from '@components/PostAddendum.astro'
 import TableOfContents from '@components/TableOfContents.astro'
 import { Image } from 'astro:assets'
 import GiscusLoader from '@components/GiscusLoader.astro'
-import siteConfig from '../../site.config'
+import siteConfig from '../site.config'
 import Tags from '@components/Tags.astro'
 import PostInfo from '@components/PostInfo.astro'
 import ScrollUpButton from '@components/ScrollUpButton.astro'
@@ -53,6 +53,7 @@ const { headings, Content: PostContent } = await render(post)
       <h1 class="mb-4 text-[1.75rem] text-accent font-semibold">
         {postData.title}
       </h1>
+      <p class="text-foreground/60 mb-6">{dateString(postData.published)}</p>
     </div>
     <!-- <hr class="border-accent/10 border-2 rounded-xl hidden lg:block" /> -->
     <div class="flex flex-col xl:gap-4 2xl:gap-18 xl:flex-row xl:items-start">

@@ -3,7 +3,7 @@ title: 'Chiseling: The Art of Polishing Vibe Code'
 published: 2025-10-19
 description: "Vibe coding gives you velocity, but chiseling gives you quality. It's the critical human judgment that separates a prototype from production code."
 coverImage:
-  src: ./chiseling.png
+  src: 'chiseling.png'
   alt: 'A sculptor chiseling a marble statue, representing the art of refining AI-generated code'
 ---
 

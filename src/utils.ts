@@ -7,7 +7,10 @@ import {
 import { getCollection } from 'astro:content'
 
 export function dateString(date: Date) {
-  return date.toISOString().split('T')[0]
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  const year = date.getFullYear().toString().slice(-2)
+  return `${month}/${day}/${year}`
 }
 
 export function pick(obj: Record<string, any>, keys: string[]) {
