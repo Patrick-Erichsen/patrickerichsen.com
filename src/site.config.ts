@@ -21,25 +21,7 @@ const config: SiteConfig = {
   // For pagination, the number of posts to display per page.
   pageSize: 5,
   // The navigation links to display in the header.
-  navLinks: [
-    {
-      name: 'Home',
-      url: '/',
-    },
-    {
-      name: 'About',
-      url: '/about',
-    },
-    {
-      name: 'Archive',
-      url: '/posts',
-    },
-    {
-      name: 'GitHub',
-      url: 'https://github.com/Patrick-Erichsen',
-      external: true,
-    },
-  ],
+  navLinks: [],
   // The theming configuration for the site.
   themes: {
     // The theming mode. One of "single" | "select" | "light-dark-auto".

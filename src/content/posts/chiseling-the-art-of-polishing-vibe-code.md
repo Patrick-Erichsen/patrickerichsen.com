@@ -1,26 +1,31 @@
 ---
-title: "Chiseling: The Art of Polishing Vibe Code"
+title: 'Chiseling: The Art of Polishing Vibe Code'
 published: 2025-10-19
 description: "Vibe coding gives you velocity, but chiseling gives you quality. It's the critical human judgment that separates a prototype from production code."
+coverImage:
+  src: ./chiseling.png
+  alt: 'A sculptor chiseling a marble statue, representing the art of refining AI-generated code'
 ---
 
 I recently read Mitchell Hashimoto's post on [Vibing a Non-Trivial Ghostty Feature](https://mitchellh.com/writing/non-trivial-vibing), where he describes his "anti-slop sessions":
 
-:::note
-Throughout these [prompting sessions], I am usually dropping in and making minor manual changes as well.
-
-The cleanup step is really important. To cleanup effectively you have to have a pretty good understanding of the code, so this forces me to not blindly accept AI-written code. Subsequently, better organized and documented code helps future agentic sessions perform better.
-
-I sometimes tongue-in-cheek refer to this as the "anti-slop session".
-:::
+> Throughout these [prompting sessions], I am usually dropping in and making minor manual changes as well.
+>
+> The cleanup step is really important. To cleanup effectively you have to have a pretty good understanding of the code, so this forces me to not blindly accept AI-written code. Subsequently, better organized and documented code helps future agentic sessions perform better.
+>
+> I sometimes tongue-in-cheek refer to this as the "anti-slop session".
 
 In the debate around vibe coding, the cleanup step seems to be left out of the conversation. Everyone can agree on the principle of "make it work, make it right, make it fast", and for experienced developers like Mitchell it has become clear that LLMs can rapidly accelerate the "make it work" phase.
 
 But for some reason everyone believes that vibe coding ends there. Instead, at Continue we like to think of the vibe coding process as more akin to sculpture work.
 
+### The Jackhammer
+
 The CLI is your jackhammer, breaking off huge chunks of possibility, letting you verify ideas and explore architectural patterns without getting bogged down in details. As Karpathy outlined in [the original vibe coding post](https://x.com/karpathy/status/1886192184808149383), at this stage you "forget that the code even exists". For many engineers this is uncomfortable, but it's the quickest path to "making it work".
 
 But working code isn't finished code. The kernel of what you actually wanted is buried underneath a mountain of AI-generated slop. Duplicated functionality, 1000 line methods, useless unit tests. Like a sculptor facing a rough-hewn marble block, you need to chisel away the excess to reveal the clean, logical core beneath.
+
+### The Chisel
 
 This is when you switch from CLI to IDE, trading the jackhammer for precision tools like [Chat](https://docs.continue.dev/ide-extensions/chat/quick-start) and [Autocomplete](https://docs.continue.dev/ide-extensions/autocomplete/quick-start). You refactor that sprawling function into three focused ones. You strip the over-engineered abstraction that handles one use case. You rename processDataAndTransformResultsIntoFinalFormat() to simply parse().
 

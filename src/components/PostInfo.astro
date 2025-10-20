@@ -14,10 +14,9 @@ const { minutesRead } = remarkPluginFrontmatter
 ---
 
 <div class:list={[className, 'text-foreground/80']}>
-  <time>{dateString(post.data.published)}</time>
   {
     post.data.author && (
-      <span class="before:content-['::'] before:inline-block before:mx-0.5">
+      <span>
         {post.data.author}
       </span>
     )

@@ -200,7 +200,7 @@ article img {
   }
 
   h1 {
-    @apply text-[1.75rem] text-[var(--theme-h1)] mt-8;
+    @apply text-[1.75rem] text-accent mt-8;
 
     &::before {
       @apply mr-2 content-['#'];
@@ -212,7 +212,7 @@ article img {
   }
 
   h2 {
-    @apply text-[1.6rem] text-[var(--theme-h2)] mt-12;
+    @apply text-[1.6rem] text-accent mt-12;
 
     &::before {
       @apply mr-2 content-['##'];
@@ -224,11 +224,7 @@ article img {
   }
 
   h3 {
-    @apply text-2xl text-[var(--theme-h3)] mt-10;
-
-    &::before {
-      @apply mr-2 content-['###'];
-    }
+    @apply text-2xl text-accent mt-10;
 
     .heading-anchor svg {
       @apply size-5;
@@ -292,7 +288,7 @@ article img {
   }
 
   a {
-    @apply text-[var(--theme-a)] underline hover:underline;
+    @apply text-accent underline hover:text-accent/80;
 
     &.heading-anchor {
       text-decoration: none;
@@ -356,7 +352,7 @@ article img {
   }
 
   blockquote {
-    @apply relative bg-foreground/5 before:content-['>'] before:block before:absolute before:text-accent before:font-bold before:left-3;
+    @apply border-l-2 border-accent/80 pl-4 py-2 bg-transparent rounded-none;
   }
 
   aside {
