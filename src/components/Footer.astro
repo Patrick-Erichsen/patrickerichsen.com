@@ -1,15 +1,35 @@
 ---
 import siteConfig from '../site.config'
-import SocialLinks from '@components/SocialLinks.astro'
 ---
 
-<footer
-  class="mt-auto pt-12 grow-0 flex flex-col gap-6 items-center justify-center max-w-full text-foreground/80"
->
-  {siteConfig.socialLinks && <SocialLinks socialLinks={siteConfig.socialLinks} />}
-  <div class="flex items-center justify-center">
-    <span class="my-1">
-      {siteConfig.author} © 2025
-    </span>
+<footer class="mt-24 pt-8 border-t border-foreground/10 text-foreground-muted text-sm">
+  <div class="flex items-center justify-between">
+    <div class="flex gap-6">
+      {
+        siteConfig.socialLinks.github && (
+          <a
+            href={siteConfig.socialLinks.github}
+            class="text-foreground-muted hover:text-foreground no-underline transition-colors"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            GitHub
+          </a>
+        )
+      }
+      {
+        siteConfig.socialLinks.twitter && (
+          <a
+            href={siteConfig.socialLinks.twitter}
+            class="text-foreground-muted hover:text-foreground no-underline transition-colors"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            X
+          </a>
+        )
+      }
+    </div>
+    <span>{siteConfig.author} &copy; {new Date().getFullYear()}</span>
   </div>
 </footer>

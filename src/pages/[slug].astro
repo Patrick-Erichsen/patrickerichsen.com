@@ -2,35 +2,18 @@
 import type { GetStaticPaths } from 'astro'
 import Layout from '@layouts/Layout.astro'
 import { getSortedPosts, dateString } from '@utils'
-import PostPreview from '@components/PostPreview.astro'
-import DividerText from '@components/DividerText.astro'
-import { getCollection, render } from 'astro:content'
-import PostAddendum from '@components/PostAddendum.astro'
-import TableOfContents from '@components/TableOfContents.astro'
-import { Image } from 'astro:assets'
-import GiscusLoader from '@components/GiscusLoader.astro'
-import siteConfig from '../site.config'
-import Tags from '@components/Tags.astro'
-import PostInfo from '@components/PostInfo.astro'
-import ScrollUpButton from '@components/ScrollUpButton.astro'
-
+import { render } from 'astro:content'
 export const getStaticPaths = (async () => {
   const posts = await getSortedPosts()
-  return posts.map((post, index) => {
-    const validPrev = index > 0
-    const validNext = index < posts.length - 1
-    const prev = validPrev ? posts[index - 1] : undefined
-    const next = validNext ? posts[index + 1] : undefined
-    return {
-      params: { slug: post.id },
-      props: { post, prev, next },
-    }
-  })
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }))
 }) satisfies GetStaticPaths
 
-const { post, prev, next } = Astro.props
+const { post } = Astro.props
 const postData = post.data
-const { headings, Content: PostContent } = await render(post)
+const { Content: PostContent } = await render(post)
 ---
 
 <Layout
@@ -39,39 +22,15 @@ const { headings, Content: PostContent } = await render(post)
   author={postData.author}
   tags={postData.tags}
 >
-  <article class="max-w-full py-7.5" data-pagefind-body>
-    {
-      postData.coverImage && (
-        <Image
-          src={postData.coverImage.src}
-          alt={postData.coverImage.alt}
-          class="w-full rounded-xl mb-5"
-        />
-      )
-    }
-    <div class="md:mx-2">
-      <h1 class="mb-4 text-[1.75rem] text-accent font-semibold">
-        {postData.title}
-      </h1>
-      <p class="text-foreground/60 mb-6">{dateString(postData.published)}</p>
-    </div>
-    <!-- <hr class="border-accent/10 border-2 rounded-xl hidden lg:block" /> -->
-    <div class="flex flex-col xl:gap-4 2xl:gap-18 xl:flex-row xl:items-start">
-      <div class="mb-5 xl:min-w-full 2xl:min-w-full prose">
-        <PostContent />
-      </div>
+  <article class="py-12" data-pagefind-body>
+    <h1 class="text-2xl font-medium mb-2">
+      {postData.title}
+    </h1>
+    <p class="text-foreground-muted text-sm mb-12">
+      {dateString(postData.published)}
+    </p>
+    <div class="prose-custom">
+      <PostContent />
     </div>
   </article>
-  <div class="article-end-marker" aria-hidden="true"></div>
-  {(prev || next) && <DividerText text="More Posts" />}
-  {prev && <PostPreview post={prev} />}
-  {next && <PostPreview post={next} />}
-  {
-    siteConfig.giscus && (
-      <>
-        <DividerText text="Comments" />
-        <GiscusLoader />
-      </>
-    )
-  }
 </Layout>

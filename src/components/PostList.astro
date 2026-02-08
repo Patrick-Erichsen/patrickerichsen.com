@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { dateString } from '@utils'
+
+interface Props {
+  posts: CollectionEntry<'posts'>[]
+}
+
+const { posts } = Astro.props
+---
+
+<ul class="list-none p-0 m-0">
+  {
+    posts.map((post) => (
+      <li class="flex items-baseline justify-between gap-4 py-3">
+        <a
+          href={`/${post.id}`}
+          class="text-foreground underline underline-offset-2 hover:decoration-2 truncate"
+        >
+          {post.data.title}
+        </a>
+        <span class="text-foreground-muted text-sm whitespace-nowrap shrink-0">
+          {dateString(post.data.published)}
+        </span>
+      </li>
+    ))
+  }
+</ul>

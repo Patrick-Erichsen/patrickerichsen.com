@@ -1,33 +1,21 @@
 ---
-import { Image } from 'astro:assets'
-import GitHubActivityCalendar from '@components/GitHubActivityCalendar.astro'
-import type { FrontmatterImage } from '@types'
-
 interface Props {
-  avatarImage?: FrontmatterImage
-  githubCalendar?: string
+  avatarUrl?: string
 }
-const { avatarImage, githubCalendar } = Astro.props
+const { avatarUrl } = Astro.props
 ---
 
-<div class="my-6 md:mx-2">
-  <div
-    class="flex flex-col sm:flex-row items-center justify-around sm:gap-5 max-w-full mb-6"
-  >
-    {
-      avatarImage && (
-        <Image
-          src={avatarImage.src}
-          alt={avatarImage.alt}
-          class="rounded-full border-8 border-accent/15 size-40 aspect-square"
-        />
-      )
-    }
-    <div>
-      <div class:list={['m-4 max-w-full prose']}>
-        <slot />
-      </div>
-    </div>
+<div class="my-12 flex flex-col sm:flex-row items-center sm:items-center gap-12">
+  {
+    avatarUrl && (
+      <img
+        src={avatarUrl}
+        alt="Patrick Erichsen"
+        class="rounded-full w-36 h-36 shrink-0"
+      />
+    )
+  }
+  <div class="text-foreground-muted sm:text-right sm:ml-auto">
+    <slot />
   </div>
-  {githubCalendar && <GitHubActivityCalendar username={githubCalendar} />}
 </div>

@@ -8,7 +8,6 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import expressiveCode from 'astro-expressive-code'
 import siteConfig from './src/site.config'
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
-import icon from 'astro-icon'
 import {
   remarkDescription,
   remarkReadingTime,
@@ -75,15 +74,14 @@ export default defineConfig({
     sitemap(),
     expressiveCode({
       themes: siteConfig.themes.include,
-      useDarkModeMediaQuery: false,
+      useDarkModeMediaQuery: true,
       defaultProps: {
         showLineNumbers: false,
         wrap: false,
       },
       plugins: [pluginLineNumbers()],
-    }), // Must come after expressive-code integration
+    }),
     mdx(),
-    icon(),
   ],
   experimental: {
     contentIntellisense: true,
