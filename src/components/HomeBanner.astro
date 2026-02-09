@@ -5,7 +5,7 @@ interface Props {
 const { avatarUrl } = Astro.props
 ---
 
-<div class="my-12 flex flex-col sm:flex-row items-center sm:items-center gap-12">
+<div class="my-12 flex flex-col sm:flex-row items-center gap-12">
   {
     avatarUrl && (
       <img
@@ -15,7 +15,17 @@ const { avatarUrl } = Astro.props
       />
     )
   }
-  <div class="text-foreground-muted sm:text-right sm:ml-auto">
+  <div class="home-bio text-foreground-muted text-right">
     <slot />
   </div>
 </div>
+
+<style is:global>
+  .home-bio a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .home-bio a:hover {
+    text-decoration-thickness: 2px;
+  }
+</style>
