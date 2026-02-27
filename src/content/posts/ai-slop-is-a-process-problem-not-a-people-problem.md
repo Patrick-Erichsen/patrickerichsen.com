@@ -16,29 +16,17 @@ CI/CD didn't just automate builds and deployments. It restructured accountabilit
 
 The blame shifted from people to process. That was the real change.
 
-The same shift is happening now, and most teams are missing it.
+Coding agents are creating the same moment. Most teams are responding the same way we did before CI/CD, by blaming individuals.
 
 ## The Blame Is Landing in the Wrong Place
 
-Teams adopting AI-assisted coding are shipping 2-5x more PRs. A growing share of that code starts from an agent. When something substandard ships, the postmortem has a new target: the developer who let the agent write it. They should have reviewed more carefully. They should have prompted differently. They trusted the output too much.
+Teams adopting coding agents are shipping 2-5x more PRs, with agents often writing the vast majority of the lines of code, if not all of them. When something substandard ships, the postmortem has a new target: the developer who let the agent write it. They should have reviewed more carefully. They should have prompted differently. They trusted the output too much.
 
 This is the same mistake teams made before CI/CD. It frames a systems problem as a personal one.
 
 The agent didn't ship slop because the developer was careless. It shipped slop because nothing in the process was there to catch it. The code went from agent to PR to merge without any standard enforcement. No gate asked whether that new API endpoint needed rate limiting. No check verified the database query matched your team's established patterns. Nothing flagged the missing input validation.
 
-Blaming the developer doesn't fix that gap. A better process does.
-
-## The Pre-CI/CD Parallel
-
-Before automated testing, teams relied on developers to manually verify their changes. Some were thorough. Some weren't. Quality became a function of individual diligence rather than system design. The response to every incident was the same: be more careful.
-
-The same conversation is happening now about AI coding: review Claude's output more carefully, don't trust it blindly, you still need to read every line. The advice is right. It doesn't scale.
-
-The problem with relying on individual review is that it doesn't hold at volume. Before CI/CD, code throughput was limited enough that manual verification was plausible. CI/CD removed that constraint, and suddenly teams had to decide: do we scale review headcount linearly with throughput, or do we encode our standards and automate enforcement?
-
-Teams that chose the latter didn't lower their quality bar. They stopped relying on every developer holding every standard in their head on every PR, and started encoding standards into the pipeline itself.
-
-AI coding tools have made the same case for the same solution. Code throughput went up 2-5x. The number of senior engineers who can review didn't change. Individual review of every AI-generated line is the "be more careful" answer. It doesn't scale.
+Blaming the developer doesn't fix that gap. A better process does. Code throughput went up 2-5x, but the number of senior engineers who can review didn't change. Individual review of every agent-generated line doesn't scale.
 
 ## What the Systems Answer Looks Like
 
