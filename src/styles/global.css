@@ -52,6 +52,15 @@ button {
   cursor: pointer;
 }
 
+:where(a:not(.no-underline)) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+:where(a:not(.no-underline)):hover {
+  text-decoration-thickness: 2px;
+}
+
 /* Prose styles for article content */
 .prose-custom {
   font-family: 'Inter Variable', sans-serif;

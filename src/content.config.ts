@@ -10,6 +10,9 @@ const postsCollection = defineCollection({
       // updated: z.coerce.date().optional(),
       draft: z.boolean().optional().default(false),
       description: z.string().optional(),
+      subtitle: z.string().optional(),
+      subtitleUrl: z.string().url().optional(),
+      subtitleUrlText: z.string().optional(),
       author: z.string().optional(),
       tags: z.array(z.string()).optional().default([]),
       coverImage: z

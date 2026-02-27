@@ -2,21 +2,21 @@
 title: 'AI Slop Is a Process Problem, Not a People Problem'
 published: 2026-02-27
 description: 'AI code quality failures are usually process failures. The scalable fix is the same one CI/CD taught us: encode standards into automated checks and enforce them before merge.'
+subtitle: 'This article was originally posted on '
+subtitleUrl: 'https://blog.continue.dev/ai-slop-is-a-process-problem'
+subtitleUrlText: 'blog.continue.dev/ai-slop-is-a-process-problem'
 tags:
   - 'Continuous AI'
   - 'Standards-as-Code'
 author: 'Patrick Erichsen'
 ---
-
-This article was originally posted on https://blog.continue.dev/ai-slop-is-a-process-problem
-
 Before CI/CD, production stability was personal. Someone pushed broken code on a Friday, the site went down, and the postmortem ended with a name. You broke it, you own it.
 
 CI/CD didn't just automate builds and deployments. It restructured accountability. When tests ran on every push and deployment pipelines enforced quality gates, "who pushed the bug" became less interesting than "why did the pipeline let it through." Teams started writing tests collectively, maintaining pipelines collaboratively, treating production stability as a shared system rather than a sum of individual conscientiousness.
 
 The blame shifted from people to process. That was the real change.
 
-The same shift is due now, and most teams are missing it.
+The same shift is happening now, and most teams are missing it.
 
 ## The Blame Is Landing in the Wrong Place
 

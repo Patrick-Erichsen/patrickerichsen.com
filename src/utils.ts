@@ -1,10 +1,11 @@
 import { getCollection } from 'astro:content'
 
 export function dateString(date: Date) {
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const year = date.getFullYear().toString().slice(-2)
-  return `${month}/${day}/${year}`
+  return new Intl.DateTimeFormat('en-US', {
+    month: '2-digit',
+    day: '2-digit',
+    year: '2-digit',
+  }).format(date)
 }
 
 export function pick(obj: Record<string, any>, keys: string[]) {
