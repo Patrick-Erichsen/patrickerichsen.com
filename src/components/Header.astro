@@ -6,16 +6,4 @@ import siteConfig from '../site.config'
   <a href="/" class="text-foreground no-underline font-medium">
     {siteConfig.title}
   </a>
-  <nav class="flex items-center gap-6">
-    {
-      siteConfig.navLinks.map((link) => (
-        <a
-          href={link.url}
-          class="no-underline text-foreground-muted hover:text-foreground transition-colors"
-        >
-          {link.name}
-        </a>
-      ))
-    }
-  </nav>
 </header>

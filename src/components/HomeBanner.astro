@@ -5,7 +5,7 @@ interface Props {
 const { avatarUrl } = Astro.props
 ---
 
-<div class="my-12 flex flex-col sm:flex-row items-center gap-12">
+<div class="home-banner my-12 flex flex-col md:flex-row items-center gap-12 md:gap-16">
   {
     avatarUrl && (
       <img
@@ -15,12 +15,28 @@ const { avatarUrl } = Astro.props
       />
     )
   }
-  <div class="home-bio text-foreground-muted text-right">
+  <div class="home-bio text-foreground-muted text-center md:text-right md:flex-1">
     <slot />
   </div>
 </div>
 
 <style is:global>
+  .home-banner {
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .home-banner {
+      width: calc(100% + 8rem);
+      margin-left: -4rem;
+      margin-right: -4rem;
+    }
+
+    .home-bio p:first-child {
+      white-space: nowrap;
+    }
+  }
+
   .home-bio a {
     text-decoration: underline;
     text-underline-offset: 2px;

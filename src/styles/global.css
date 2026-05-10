@@ -299,6 +299,31 @@ button {
     border-radius: 4px;
     margin: 2rem auto;
   }
+
+  .notion-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin: 2rem 0 3rem;
+
+    figure {
+      margin: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      max-height: 360px;
+      object-fit: cover;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .notion-columns {
+      grid-template-columns: 1fr;
+    }
+  }
 }
 
 article img {
@@ -310,5 +335,142 @@ article img {
 
   &[pixelated='true'] {
     image-rendering: pixelated;
+  }
+}
+
+.conversation-trigger {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font: inherit;
+}
+
+.conversation-trigger:hover {
+  text-decoration-thickness: 2px;
+}
+
+.conversation-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: color-mix(in srgb, #000 62%, transparent);
+}
+
+.conversation-content {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 51;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  width: min(760px, calc(100vw - 2rem));
+  max-height: min(760px, calc(100vh - 2rem));
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  border: 1px solid color-mix(in srgb, var(--color-fg) 18%, transparent);
+  border-radius: 6px;
+  box-shadow: 0 24px 80px color-mix(in srgb, #000 42%, transparent);
+}
+
+.conversation-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-fg) 12%, transparent);
+}
+
+.conversation-kicker,
+.conversation-role,
+.conversation-footer {
+  font-family: 'Berkeley Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--color-fg-muted);
+}
+
+.conversation-kicker {
+  margin: 0 0 0.25rem;
+  text-transform: uppercase;
+}
+
+.conversation-title {
+  margin: 0;
+  font-family: 'Berkeley Mono', monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.conversation-close {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: inherit;
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--color-fg) 18%, transparent);
+  border-radius: 4px;
+}
+
+.conversation-thread {
+  overflow: auto;
+  padding: 1rem;
+}
+
+.conversation-message {
+  max-width: 82%;
+  margin: 0 0 1rem;
+}
+
+.conversation-message.assistant {
+  margin-left: auto;
+}
+
+.conversation-role {
+  margin: 0 0 0.35rem;
+}
+
+.conversation-bubble {
+  border: 1px solid color-mix(in srgb, var(--color-fg) 12%, transparent);
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+  background: color-mix(in srgb, var(--color-fg) 4%, transparent);
+  font-family: 'Inter Variable', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.conversation-message.assistant .conversation-bubble {
+  background: color-mix(in srgb, var(--color-fg) 8%, transparent);
+}
+
+.conversation-bubble p {
+  margin: 0 0 0.8rem;
+}
+
+.conversation-bubble p:last-child {
+  margin-bottom: 0;
+}
+
+.conversation-footer {
+  padding: 0.75rem 1.25rem 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-fg) 12%, transparent);
+}
+
+@media (max-width: 640px) {
+  .conversation-content {
+    width: calc(100vw - 1rem);
+    max-height: calc(100vh - 1rem);
+  }
+
+  .conversation-message {
+    max-width: 100%;
   }
 }

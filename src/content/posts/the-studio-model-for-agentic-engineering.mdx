@@ -1,0 +1,69 @@
+---
+title: 'The Studio Model for Agentic Engineering'
+published: 2026-05-10
+description: 'Artists use studies to explore truth before composing final works. Agentic engineering can use parallel spikes the same way.'
+tags:
+  - 'Agentic Engineering'
+  - 'Creativity'
+author: 'Patrick Erichsen'
+---
+
+import ConversationModal from '@components/ConversationModal'
+import bierstadtStudy from './the-studio-model-for-agentic-engineering/bierstadt-study.png'
+import lastBuffaloDc from './the-studio-model-for-agentic-engineering/last-of-the-buffalo-dc.jpg'
+
+export const conversationMessages = [
+  {
+    role: 'user',
+    content: `I recently visited the de Young museum and saw Bierstadt's study for "The Last of the Buffalo".
+
+I didn't realize that artists did "studies". Help me better understand how artists use "studies" in their work.`,
+  },
+  {
+    role: 'assistant',
+    content: `What a great thing to notice at the de Young! Studies are one of those things that, once you know to look for them, completely change how you see finished artworks.
+
+A "study" is essentially preparatory work an artist does to figure something out before (or during) the making of a final piece. Think of it less as a rough draft and more as a thinking tool. Artists use studies to solve specific problems: how does light fall across this particular rock formation, what does a buffalo's musculature actually look like when it's charging, how do these three figures balance compositionally, what mood does this color palette create.
+
+For Bierstadt specifically, studies were essential to his whole practice. He'd travel west on expeditions, sketching and painting small oil studies on site, capturing the actual light, geology, weather, and animals he saw. Then he'd return to his studio in New York and use those studies as raw material for the enormous, dramatic canvases he became famous for. The studies were truth-gathering. The finished paintings were composition and theater built from that truth. "The Last of the Buffalo" exists in multiple versions and was developed from numerous on-site studies of buffalo, plains landscapes, and Indigenous figures Bierstadt had observed and sketched over years.
+
+Different kinds of studies serve different purposes. There are figure studies (drawing the human body to understand anatomy and gesture), landscape or plein air studies (painted outdoors to capture fleeting light), compositional studies (small thumbnails working out where things go), color studies (testing palettes), and detail studies (zooming in on a hand, a tree, a piece of drapery). Some are quick gestures done in minutes; others are highly finished and beautiful in their own right, the way many of Bierstadt's oil studies are now considered masterworks themselves.
+
+The tradition goes back centuries. Leonardo's notebooks are full of studies. Rubens kept a workshop where he and his assistants generated studies constantly. Degas did countless studies of dancers. John Singer Sargent's watercolor studies are arguably as celebrated now as his society portraits. The practice persists today: animators, illustrators, and concept artists all do studies, sometimes called "value studies" or "reference studies."
+
+One reason studies feel revelatory when you encounter them is that they show the artist's mind working. A finished painting presents itself as inevitable, the way it had to be. A study shows you a person figuring something out, making choices, sometimes getting it wrong. There's an intimacy to that. The brushwork is often looser, the decisions more visible. You can see the artist seeing.
+
+If you want to go deeper, the de Young and the Legion of Honor both have strong holdings of American landscape studies, and the Crocker in Sacramento has a notable Bierstadt collection. Looking at a study and a finished work side by side is one of the best ways to understand how artists actually build pictures.`,
+  },
+]
+
+I visited the de Young museum for the first time this weekend with an old high school friend. While walking around the Hudson School wing of the museum, I came across a study that Albert Bierstadt created for his painting “The Last of the Buffalo”, which I had previously seen in the National Gallery of Art in DC while visiting this same friend.
+
+<div class="notion-columns">
+  <figure>
+    <img src={bierstadtStudy.src} alt='Albert Bierstadt, Study for "The Last of the Buffalo" at the de Young' />
+    <figcaption>Albert Bierstadt, Study for “The Last of the Buffalo” at the de Young</figcaption>
+  </figure>
+  <figure>
+    <img src={lastBuffaloDc.src} alt='Me with “The Last of the Buffalo” at the National Gallery of Art in DC' />
+    <figcaption>Me with “The Last of the Buffalo” at the National Gallery of Art in DC</figcaption>
+  </figure>
+</div>
+
+This painting was the only one that struck me enough to pause and take a photo with while visiting the National Gallery. I’ve always been enamored by the setting of the West, and Bierstadt’s "The Last of the Buffalo" does a great job of capturing the sweeping, epic narrative both from a natural and human perspective.
+
+What I never realized until seeing the study at the de Young was that it’s common for artists, especially from the Hudson School like Bierstadt and Cole, to work incrementally towards a final piece by creating a number of “studies”. Here’s an excerpt of a <ConversationModal client:load trigger="conversation" title="Artist Studies and Preparatory Sketches" sourceUrl="https://claude.ai/share/a8e23f80-e944-44df-9052-d2fc9a469116" messages={conversationMessages} /> I had with Claude about it:
+
+> For Bierstadt specifically, studies were essential to his whole practice. He'd travel west on expeditions, sketching and painting small oil studies on site, capturing the actual light, geology, weather, and animals he saw. Then he'd return to his studio in New York and use those studies as raw material for the enormous, dramatic canvases he became famous for. The studies were truth-gathering. The finished paintings were composition and theater built from that truth. "The Last of the Buffalo" exists in multiple versions and was developed from numerous on-site studies of buffalo, plains landscapes, and Indigenous figures Bierstadt had observed and sketched over years.
+
+This really resonated with me because I’ve been trying to be more intentional about approaching my work as a software engineer in this tumultuous era of AI as more of an artist ([deliberate intentional practice](https://ghuntley.com/play/) is a great blog post from Geoffrey Huntley about this).
+
+Authoring code is effectively a solved problem as of this writing, but the act of exploring the solution space to a problem is still a core part of the “taste” that defines a great engineer. Artists do this through studies, software engineers do this through [spikes](https://en.wikipedia.org/wiki/Spike_(software_development)):
+
+> A **spike** is a product development method originating from extreme programming that uses the simplest possible program to explore potential solutions.
+
+In a pre-AI era, spikes were considered a luxury good, a treat for an engineer to get to hack on some code without the drudgery of producing production-ready code. But with LLMs, we can kick off as many parallel spikes on a subject as we’re willing to allocate tokens.
+
+When exploring the solution space to building a CLI tool for example, you can now ask an LLM to implement it in Go, TypeScript, and Rust, let it rip for a few hours in a sandbox, run the same evaluation script across all the builds, and get a sense of the tradeoffs between each implementation.
+
+I think this is a perfect example of where LLMs can actually enable us to be *more* creative, despite the prevailing narrative outside of the SF bubble that AI is antithetical to creativity. Imagine the resources that would have taken just a few years ago! Now you can run that entire process from your phone while out on a walk in the park and check out the results when you get home.
