@@ -4,6 +4,7 @@ import { getSortedPosts } from '@utils'
 import { getCollection, render } from 'astro:content'
 import PostList from '@components/PostList.astro'
 import HomeBanner from '@components/HomeBanner.astro'
+import SubscribeForm from '@components/SubscribeForm.astro'
 
 const home = await getCollection('home')
 let HomeContent
@@ -28,4 +29,5 @@ const sortedPosts = await getSortedPosts()
       <PostList posts={sortedPosts} />
     )
   }
+  <SubscribeForm />
 </Layout>

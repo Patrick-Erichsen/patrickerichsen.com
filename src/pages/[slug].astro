@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro'
 import Layout from '@layouts/Layout.astro'
 import { getSortedPosts, dateString } from '@utils'
 import { render } from 'astro:content'
+import SubscribeForm from '@components/SubscribeForm.astro'
 export const getStaticPaths = (async () => {
   const posts = await getSortedPosts()
   return posts.map((post) => ({
@@ -42,5 +43,6 @@ const { Content: PostContent } = await render(post)
     <div class="prose-custom">
       <PostContent />
     </div>
+    <SubscribeForm />
   </article>
 </Layout>
