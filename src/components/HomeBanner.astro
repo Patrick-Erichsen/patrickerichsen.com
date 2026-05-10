@@ -5,13 +5,13 @@ interface Props {
 const { avatarUrl } = Astro.props
 ---
 
-<div class="home-banner my-12 flex flex-col md:flex-row items-center gap-12 md:gap-16">
+<div class="home-banner my-12 flex flex-col md:flex-row items-center gap-10 md:gap-8 lg:gap-10">
   {
     avatarUrl && (
       <img
         src={avatarUrl}
         alt="Patrick Erichsen"
-        class="rounded-full w-36 h-36 shrink-0"
+        class="rounded-full w-36 h-36 md:w-32 md:h-32 lg:w-36 lg:h-36 shrink-0"
       />
     )
   }
@@ -26,15 +26,13 @@ const { avatarUrl } = Astro.props
   }
 
   @media (min-width: 1024px) {
-    .home-banner {
-      width: calc(100% + 8rem);
-      margin-left: -4rem;
-      margin-right: -4rem;
-    }
-
     .home-bio p:first-child {
       white-space: nowrap;
     }
+  }
+
+  .home-bio p + p {
+    margin-top: 1rem;
   }
 
   .home-bio a {
