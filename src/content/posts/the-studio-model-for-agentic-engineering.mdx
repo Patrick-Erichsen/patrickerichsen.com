@@ -9,6 +9,7 @@ author: 'Patrick Erichsen'
 ---
 
 import ConversationModal from '@components/ConversationModal'
+import { Image } from 'astro:assets'
 import bierstadtStudy from './the-studio-model-for-agentic-engineering/bierstadt-study.png'
 import lastBuffaloDc from './the-studio-model-for-agentic-engineering/last-of-the-buffalo-dc.jpg'
 
@@ -41,12 +42,34 @@ I visited the de Young museum for the first time this weekend with an old high s
 
 <div class="notion-columns">
   <figure>
-    <img src={bierstadtStudy.src} alt='Albert Bierstadt, Study for "The Last of the Buffalo" at the de Young' />
-    <figcaption>Albert Bierstadt, Study for “The Last of the Buffalo” at the de Young</figcaption>
+    <Image
+      src={bierstadtStudy}
+      alt='Albert Bierstadt, Study for "The Last of the Buffalo" at the de Young'
+      widths={[400, 800]}
+      sizes="(max-width: 720px) calc(100vw - 3rem), min(424px, calc((100vw - 4.25rem) / 2))"
+      format="webp"
+      quality={82}
+      loading="eager"
+      decoding="async"
+    />
+    <figcaption>
+      Albert Bierstadt, Study for “The Last of the Buffalo” at the de Young
+    </figcaption>
   </figure>
   <figure>
-    <img src={lastBuffaloDc.src} alt='Me with “The Last of the Buffalo” at the National Gallery of Art in DC' />
-    <figcaption>Me with “The Last of the Buffalo” at the National Gallery of Art in DC</figcaption>
+    <Image
+      src={lastBuffaloDc}
+      alt="Me with “The Last of the Buffalo” at the National Gallery of Art in DC"
+      widths={[400, 800, 1200, 1600]}
+      sizes="(max-width: 720px) calc(100vw - 3rem), min(424px, calc((100vw - 4.25rem) / 2))"
+      format="webp"
+      quality={82}
+      loading="eager"
+      decoding="async"
+    />
+    <figcaption>
+      Me with “The Last of the Buffalo” at the National Gallery of Art in DC
+    </figcaption>
   </figure>
 </div>
 
