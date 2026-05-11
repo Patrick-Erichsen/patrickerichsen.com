@@ -339,6 +339,10 @@ article img {
 }
 
 .conversation-trigger {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3em;
+  vertical-align: baseline;
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -346,6 +350,13 @@ article img {
   border: 0;
   padding: 0;
   font: inherit;
+  cursor: pointer;
+}
+
+.conversation-trigger-icon {
+  position: relative;
+  top: 0.12em;
+  flex: 0 0 auto;
 }
 
 .conversation-trigger:hover {

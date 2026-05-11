@@ -1,5 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog'
-import { X } from 'lucide-react'
+import { MessageCircle, X } from 'lucide-react'
 
 type ConversationMessage = {
   role: 'user' | 'assistant'
@@ -21,7 +21,15 @@ export default function ConversationModal({
 }: ConversationModalProps) {
   return (
     <Dialog.Root>
-      <Dialog.Trigger className="conversation-trigger">{trigger}</Dialog.Trigger>
+      <Dialog.Trigger className="conversation-trigger">
+        <MessageCircle
+          aria-hidden="true"
+          className="conversation-trigger-icon"
+          size={15}
+          strokeWidth={1.8}
+        />
+        <span>{trigger}</span>
+      </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="conversation-overlay" />
         <Dialog.Content className="conversation-content">
