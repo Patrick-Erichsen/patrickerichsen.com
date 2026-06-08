@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "agent-revision-history": {
+      "source": "Patrick-Erichsen/skills",
+      "sourceType": "github",
+      "skillPath": "skills/agent-revision-history/SKILL.md",
+      "computedHash": "e51e9c62efeb6bebabf3fa72ec6604cdafa3d4f90cd060e3e3b0dd1bbc86557d"
+    }
+  }
+}

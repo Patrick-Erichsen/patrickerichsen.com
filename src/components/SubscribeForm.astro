@@ -3,26 +3,13 @@
     <h2 id="subscribe-heading">Subscribe</h2>
     <p>Get new posts by email.</p>
   </div>
-  <form
-    action="https://buttondown.com/api/emails/embed-subscribe/erichsen"
-    method="post"
-    target="popupwindow"
-    class="subscribe-form-fields"
-  >
-    <label for="subscribe-email">Email</label>
-    <div>
-      <input
-        id="subscribe-email"
-        type="email"
-        name="email"
-        required
-        autocomplete="email"
-        placeholder="you@example.com"
-      />
-      <input type="hidden" value="1" name="embed" />
-      <button type="submit">Subscribe</button>
-    </div>
-  </form>
+  <iframe
+    src="https://patrickerichsen.substack.com/embed"
+    width="480"
+    height="320"
+    frameborder="0"
+    scrolling="no"
+    title="Subscribe to Patrick Erichsen on Substack"></iframe>
 </section>
 
 <style>
@@ -44,50 +31,17 @@
     color: var(--color-fg-muted);
   }
 
-  .subscribe-form-fields {
-    max-width: 30rem;
-  }
-
-  .subscribe-form-fields label {
+  .subscribe-form iframe {
     display: block;
-    margin-bottom: 0.375rem;
-    color: var(--color-fg-muted);
-  }
-
-  .subscribe-form-fields div {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .subscribe-form-fields input {
-    min-width: 0;
-    flex: 1;
-    border: 1px solid color-mix(in srgb, var(--color-fg) 18%, transparent);
-    border-radius: 4px;
-    background: transparent;
-    color: var(--color-fg);
-    padding: 0.625rem 0.75rem;
-    font: inherit;
-    line-height: 1.4;
-  }
-
-  .subscribe-form-fields button {
-    border: 1px solid var(--color-fg);
-    border-radius: 4px;
-    background: var(--color-fg);
-    color: var(--color-bg);
-    padding: 0.625rem 0.875rem;
-    font: inherit;
-    line-height: 1.4;
+    width: min(100%, 30rem);
+    max-width: 100%;
+    border: 1px solid color-mix(in srgb, var(--color-fg) 12%, transparent);
+    background: white;
   }
 
   @media (max-width: 520px) {
-    .subscribe-form-fields div {
-      flex-direction: column;
-    }
-
-    .subscribe-form-fields button {
-      width: 100%;
+    .subscribe-form iframe {
+      height: 300px;
     }
   }
 </style>
