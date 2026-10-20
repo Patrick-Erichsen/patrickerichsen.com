@@ -1,0 +1,49 @@
+---
+import Layout from '@layouts/Layout.astro'
+import { readFileSync } from 'node:fs'
+
+const index = JSON.parse(
+  readFileSync(
+    new URL('../../public/skills/.well-known/agent-skills/index.json', import.meta.url),
+    'utf8',
+  ),
+) as { skills: Array<{ name: string; description: string }> }
+const source = 'https://patrickerichsen.com/skills'
+---
+
+<Layout title="Skills" description="Agent skills I use and maintain.">
+  <div class="py-12">
+    <h1 class="text-2xl font-medium mb-3">Skills</h1>
+    <p class="text-foreground-muted mb-5">
+      These are the agent skills I use and maintain. Install from this site with <code
+        >npx skills</code
+      >:
+    </p>
+    <pre
+      class="whitespace-pre-wrap break-all rounded-md bg-foreground/5 px-4 py-3 text-sm"><code>npx skills add {source}</code></pre>
+    <p class="text-foreground-muted mt-4 text-sm">
+      Choose a skill during installation, or add <code>--skill name</code> to the command.
+      The <a class="underline" href="https://github.com/Patrick-Erichsen/skills"
+        >source is on GitHub</a
+      >.
+    </p>
+
+    <ul class="mt-10 divide-y divide-foreground/10">
+      {
+        index.skills.map((skill) => (
+          <li class="py-5 first:pt-0">
+            <h2 class="font-medium">
+              <a
+                class="underline"
+                href={`https://github.com/Patrick-Erichsen/skills/tree/main/skills/${skill.name}`}
+              >
+                {skill.name}
+              </a>
+            </h2>
+            <p class="text-foreground-muted mt-1 text-sm">{skill.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>
