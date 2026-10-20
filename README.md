@@ -78,3 +78,20 @@ This project is licensed under the [MIT License](LICENSE).
 ## 🩷 Sponsor
 
 Consider [buying me a coffee](https://ko-fi.com/stelclementine) to keep me caffeinated while I work on open source projects like this one!
+
+## Agent skills
+
+The public [skills repository](https://github.com/Patrick-Erichsen/skills) is linked as a Git submodule at `vendor/skills`. The site build packages its tracked skill files and serves the [Agent Skills discovery index](https://schemas.agentskills.io/discovery/0.2.0/schema.json) under `/skills/.well-known/agent-skills/`. Install from the site with:
+
+```sh
+npx skills add https://patrickerichsen.com/skills
+```
+
+To publish newer skills, advance the submodule and commit its new pointer in this repository:
+
+```sh
+git submodule update --init --remote vendor/skills
+git add vendor/skills
+git commit -m "chore: update published skills"
+```
+EOF'
